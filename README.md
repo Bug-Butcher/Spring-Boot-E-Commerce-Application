@@ -112,47 +112,34 @@ Additional modules and improvements are continuously being added.
 
 ---
 
-Project Architecture
-                                ┌────────────────────────────┐
-                                │        Client Layer        │
-                                │  React (Planned) / Postman │
-                                └─────────────┬──────────────┘
-                                              │
-                                              ▼
-                                ┌────────────────────────────┐
-                                │      REST API Layer        │
-                                │        Controllers         │
-                                └─────────────┬──────────────┘
-                                              │
-                                              ▼
-                                ┌────────────────────────────┐
-                                │     Business Logic Layer   │
-                                │   Services & Interfaces    │
-                                └─────────────┬──────────────┘
-                                              │
-                  ┌───────────────────────────┼───────────────────────────┐
-                  ▼                           ▼                           ▼
-      ┌──────────────────┐      ┌─────────────────────┐      ┌──────────────────┐
-      │   DTO Layer       │      │ Validation Layer    │      │ Exception Layer  │
-      │ Requests/Responses│      │ Bean Validation     │      │ Global Handlers  │
-      └──────────────────┘      └─────────────────────┘      └──────────────────┘
-                                              │
-                                              ▼
-                                ┌────────────────────────────┐
-                                │    Persistence Layer       │
-                                │ Spring Data JPA Repository │
-                                └─────────────┬──────────────┘
-                                              │
-                                              ▼
-                                ┌────────────────────────────┐
-                                │      Hibernate ORM         │
-                                └─────────────┬──────────────┘
-                                              │
-                                              ▼
-                                ┌────────────────────────────┐
-                                │ Relational Database (H2)   │
-                                │  (MySQL/PostgreSQL Planned)│
-                                └────────────────────────────┘
+## Project Architecture
+
+```mermaid
+flowchart TD
+
+    A[Client Layer<br/>React (Planned) / Postman]
+    B[REST Controllers]
+    C[Service Layer]
+    D[DTO Layer]
+    E[Validation]
+    F[Global Exception Handling]
+    G[Repository Layer]
+    H[Hibernate / JPA]
+    I[(H2 Database)]
+    J[(MySQL / PostgreSQL<br/>Planned)]
+
+    A --> B
+    B --> C
+
+    C --> D
+    C --> E
+    C --> F
+    C --> G
+
+    G --> H
+    H --> I
+    H -. Future .-> J
+```
 Planned Architecture Expansion
 
 As development progresses, the application will be extended with additional modules including:
