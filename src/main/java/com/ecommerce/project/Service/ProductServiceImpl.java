@@ -9,8 +9,8 @@ import com.ecommerce.project.payload.ProductDTO;
 import com.ecommerce.project.payload.ProductResponse;
 import com.ecommerce.project.repositories.CategoryRepository;
 import com.ecommerce.project.repositories.ProductRepository;
+import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -25,19 +25,20 @@ import java.util.List;
 
 
 @Service
+@RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService{
 
-    @Autowired
-    private CategoryRepository categoryRepository;
 
-    @Autowired
-    private ProductRepository productRepository;
+    private final CategoryRepository categoryRepository;
 
-    @Autowired
-    private ModelMapper modelMapper;
 
-    @Autowired
-    private FileService fileService;
+    private final ProductRepository productRepository;
+
+
+    private final ModelMapper modelMapper;
+
+
+    private final FileService fileService;
 
     @Value("${project.image}")
     private String path;

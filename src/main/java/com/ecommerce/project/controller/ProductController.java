@@ -2,7 +2,7 @@ package com.ecommerce.project.controller;
 
 
 import com.ecommerce.project.Service.ProductService;
-import com.ecommerce.project.config.AppConstants;
+import com.ecommerce.project.configs.AppConstants;
 import com.ecommerce.project.payload.ProductDTO;
 import com.ecommerce.project.payload.ProductResponse;
 import jakarta.validation.Valid;

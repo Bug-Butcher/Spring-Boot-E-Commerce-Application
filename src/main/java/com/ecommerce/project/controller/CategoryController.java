@@ -2,7 +2,7 @@ package com.ecommerce.project.controller;
 
 
 import com.ecommerce.project.Service.CategoryService;
-import com.ecommerce.project.config.AppConstants;
+import com.ecommerce.project.configs.AppConstants;
 import com.ecommerce.project.payload.CategoryDTO;
 import com.ecommerce.project.payload.CategoryResponse;
 import jakarta.validation.Valid;
